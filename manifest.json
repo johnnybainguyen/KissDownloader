@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  
+  "name": "KissDownloader",
+  "description" : "File Downloader for Kiss Domain video streaming site.",
+  "version": "1.0",
+
+  "background": {
+      "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["*://*.kisscartoon.me/Cartoon/*/*",
+				"*://*.kissanime.to/Anime/*/*",
+				"*://*.kissasian.com/Drama/*/*"],
+    "js": ["content.js", "functions.js"]
+  }],
+  "browser_action": {
+    "default_title": "Test Extension"
+  },
+  "icons": { 
+          "128": "icon128.png" 
+	},
+  "permissions" : [
+	"downloads",
+	"storage",
+	"tabs",
+	"activeTab",
+	"<all_urls>"
+	]
+}
